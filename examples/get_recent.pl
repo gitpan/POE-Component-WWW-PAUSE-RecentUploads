@@ -31,8 +31,7 @@ sub _start {
 
 sub recent {
     my $data = $_[ARG0];
-    use Data::Dumper;
-    print Dumper( $data );
+
     if ( $data->{error} ) {
         print "Error while fetching recent data: $data->{error}\n";
     }
@@ -42,7 +41,7 @@ sub recent {
                         @$dist{ qw(dist name size) };
         }
     }
-    printf "\nRequest was sent at: %s\n", localtime $data->{_time};
+    printf "\nRequest was sent at: %s\n", scalar localtime $data->{_time};
     $poco->shutdown;
 }
 

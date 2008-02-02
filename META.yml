@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:                POE-Component-WWW-PAUSE-RecentUploads
-version:             0.01
+version:             0.02
 abstract:            a non-blocking L<POE> wrapper
 license:             ~
 author:              

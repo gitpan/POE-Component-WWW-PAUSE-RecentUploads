@@ -1,5 +1,8 @@
 Revision history for Perl extension POE::Component::WWW::PAUSE::RecentUploads.
 
+0.02  Sat Feb  2 11:49:31 2008
+    - fixed ->shutdown() bug.
+
 0.01  Thu Jan 31 21:34:31 2008
 	- original version; created by h2xs 1.23 with options
 		-A -X -c --skip-exporter -v 0.01 -n POE::Component::WWW::PAUSE::RecentUploads

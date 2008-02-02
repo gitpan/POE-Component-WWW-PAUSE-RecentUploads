@@ -5,7 +5,7 @@ use strict;
 use warnings;
 
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 use WWW::PAUSE::RecentUploads;
 use POE qw( Wheel::Run  Filter::Reference  Filter::Line);
@@ -56,7 +56,7 @@ sub spawn {
 
 sub _start {
     my ( $kernel, $self ) = @_[ KERNEL, OBJECT ];
-
+     $self->{session_id} = $_[SESSION]->ID();
     if  ( $self->{alias} ) {
         $kernel->alias_set( $self->{alias} );
     }
@@ -141,7 +141,7 @@ sub _shutdown {
     my ( $kernel, $self ) = @_[ KERNEL, OBJECT ];
     $kernel->alarm_remove_all;
     $kernel->alias_remove( $_ ) for $kernel->alias_list;
-    $kernel->refcount_decrement( $self => __PACKAGE__ )
+    $kernel->refcount_decrement( $self->{session_id} => __PACKAGE__ )
         unless $self->{alias};
 
     $self->{shutdown} = 1;
