@@ -1,0 +1,10 @@
+Changes
+Makefile.PL
+MANIFEST
+README
+examples/get_recent.pl
+t/98-pod.t
+t/99-pod-coverage.t
+t/POE-Component-WWW-PAUSE-RecentUploads.t
+lib/POE/Component/WWW/PAUSE/RecentUploads.pm
+META.yml                                 Module meta-data (added by MakeMaker)
