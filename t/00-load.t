@@ -1,8 +1,7 @@
-# Before `make install' is performed this script should be runnable with
-# `make test'. After `make install' it should work as `perl POE-Component-WWW-PAUSE-RecentUploads.t'
+#!/usr/bin/env perl
 
-#########################
-
+use strict;
+use warnings;
 
 use Test::More tests => 9;
 BEGIN {
@@ -14,9 +13,6 @@ BEGIN {
     use_ok('WWW::PAUSE::RecentUploads');
     use_ok('POE::Component::WWW::PAUSE::RecentUploads');
 };
-
-use strict;
-use warnings;
 
 use POE qw(Component::WWW::PAUSE::RecentUploads);
 

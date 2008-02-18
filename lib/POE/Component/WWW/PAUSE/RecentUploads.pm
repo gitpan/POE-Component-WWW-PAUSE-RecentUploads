@@ -1,11 +1,9 @@
 package POE::Component::WWW::PAUSE::RecentUploads;
 
-use 5.008008;
-use strict;
 use warnings;
+use strict;
 
-
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 use WWW::PAUSE::RecentUploads;
 use POE qw( Wheel::Run  Filter::Reference  Filter::Line);
@@ -282,7 +280,7 @@ around L<WWW::PAUSE::RecentUploads>.
             print "Error while fetching recent data: $data->{error}\n";
         }
         else {
-            foreach my $dist ( @{ $data->{data} } ) {
+            foreach my $dist ( @{ $data->{data} || [] } ) {
                 printf "%s by %s (size: %s)\n",
                         @$dist{ qw(dist name size) };
             }
@@ -608,21 +606,50 @@ This module requires the following modules/version for proper operation:
 
 Not tested with earlier versions of those modules.
 
-=head1 BUGS
-
-None know, please report if you find any.
-
 =head1 AUTHOR
 
-Zoffix Znet, E<lt>zoffix@cpan.orgE<gt>
+Zoffix Znet, C<< <zoffix at cpan.org> >>
+(L<http://zoffix.com>, L<http://haslayout.net>)
 
-=head1 COPYRIGHT AND LICENSE
+=head1 BUGS
 
-Copyright (C) 2008 by Zoffix Znet
+Please report any bugs or feature requests to C<bug-poe-component-www-pause-recentuploads at rt.cpan.org>, or through
+the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=POE-Component-WWW-PAUSE-RecentUploads>.  I will be notified, and then you'll
+automatically be notified of progress on your bug as I make changes.
 
-This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself, either Perl version 5.8.8 or,
-at your option, any later version of Perl 5 you may have available.
+=head1 SUPPORT
 
+You can find documentation for this module with the perldoc command.
+
+    perldoc POE::Component::WWW::PAUSE::RecentUploads
+
+You can also look for information at:
+
+=over 4
+
+=item * RT: CPAN's request tracker
+
+L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=POE-Component-WWW-PAUSE-RecentUploads>
+
+=item * AnnoCPAN: Annotated CPAN documentation
+
+L<http://annocpan.org/dist/POE-Component-WWW-PAUSE-RecentUploads>
+
+=item * CPAN Ratings
+
+L<http://cpanratings.perl.org/d/POE-Component-WWW-PAUSE-RecentUploads>
+
+=item * Search CPAN
+
+L<http://search.cpan.org/dist/POE-Component-WWW-PAUSE-RecentUploads>
+
+=back
+
+=head1 COPYRIGHT & LICENSE
+
+Copyright 2008 Zoffix Znet, all rights reserved.
+
+This program is free software; you can redistribute it and/or modify it
+under the same terms as Perl itself.
 
 =cut
