@@ -3,7 +3,7 @@ package POE::Component::WWW::PAUSE::RecentUploads;
 use warnings;
 use strict;
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 use WWW::PAUSE::RecentUploads;
 use POE qw( Wheel::Run  Filter::Reference  Filter::Line);
@@ -498,9 +498,7 @@ the C<timeout>, which will default to 30 seconds.
     }
 
 B<Optional>. Any keys beginning with the C<_> (underscore) will be present
-in the output intact. If C<where> option (see below) is specified, any
-arguments will also be present in the result of "finished downloading"
-event.
+in the output intact.
 
 =head2 shutdown
 

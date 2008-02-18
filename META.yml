@@ -1,6 +1,6 @@
 ---
 name: POE-Component-WWW-PAUSE-RecentUploads
-version: 0.04
+version: 0.05
 author:
   - 'Zoffix Znet <zoffix@cpan.org>'
 abstract: |-
@@ -21,7 +21,7 @@ build_requires:
 provides:
   POE::Component::WWW::PAUSE::RecentUploads:
     file: lib/POE/Component/WWW/PAUSE/RecentUploads.pm
-    version: 0.04
+    version: 0.05
 generated_by: Module::Build version 0.2808
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.2.html
