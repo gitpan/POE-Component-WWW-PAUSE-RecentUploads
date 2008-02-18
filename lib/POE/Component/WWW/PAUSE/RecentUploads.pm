@@ -3,7 +3,7 @@ package POE::Component::WWW::PAUSE::RecentUploads;
 use warnings;
 use strict;
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 use WWW::PAUSE::RecentUploads;
 use POE qw( Wheel::Run  Filter::Reference  Filter::Line);
@@ -326,41 +326,52 @@ is optional. The possible keys/values are as follows:
 
 =head2 login
 
-    { login => 'PAUSE LOGIN' }
+    ->spawn( login => 'PAUSE LOGIN' );
 
 B<Mandatory>. Must contain your L<http://pause.perl.org> login.
 
 =head2 pass
 
-    { login => 'PAUSE LOGIN' }
+    ->spawn( login => 'PAUSE LOGIN' )
 
 B<Mandatory>. Must contain your L<http://pause.perl.org> password.
 
 =head2 alias
 
-    { alias => 'recent' }
+    ->spawn( alias => 'recent' );
 
 B<Optional>. Specifies the component's L<POE::Session> alias of the
 component.
 
 =head2 debug
 
-B<Optional>. 
-=head2 ua_args
-
-    { debug   => 1 }
+    ->spawn( debug   => 1 );
 
 B<Optional>. When set to a true value will make the component emit some
 debuging info. Defaults to false.
 
+=head2 ua_args
+
+    ->spawn(
+        ua_args => {
+            timeout => 10,
+            agent   => 'RecentUA',
+            # other LWP::UserAgent's constructor arguments can go here
+        },
+    );
+
+B<Optional>. Takes a hashref which specifies arguments to pass to
+L<LWP::UserAgent> constructor. Defaults to whatever C<ua_args> argument
+of L<WWW::PAUSE::RecentUploads> constructor defaults to.
+
 =head2 options
 
-    {
+    ->spawn(
         options => {
             trace   => 1,
             default => 1,
         }
-    }
+    );
 
 A hashref of POE Session options to pass to the component's session.
 
