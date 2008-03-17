@@ -1,5 +1,8 @@
 Revision history for POE-Component-WWW-PAUSE-RecentUploads
 
+0.05  Mon Mar 17 06:37:00 2008
+    - changed version on prereqs to reflect bug changes
+
 0.04  Mon Feb 18 11:49:31 2008
     - fixed documentation discrepancy. (again :()
 

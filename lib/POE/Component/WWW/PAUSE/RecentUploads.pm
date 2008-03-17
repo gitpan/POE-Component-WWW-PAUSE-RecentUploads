@@ -3,7 +3,7 @@ package POE::Component::WWW::PAUSE::RecentUploads;
 use warnings;
 use strict;
 
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 use WWW::PAUSE::RecentUploads;
 use POE qw( Wheel::Run  Filter::Reference  Filter::Line);

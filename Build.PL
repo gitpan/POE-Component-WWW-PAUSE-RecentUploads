@@ -11,7 +11,7 @@ my $builder = Module::Build->new(
         'Test::More' => 0,
     },
     requires => {
-        'WWW::PAUSE::RecentUploads' => 0.01,
+        'WWW::PAUSE::RecentUploads' => 0.03,
         'POE'                       => 0.9999,
         'POE::Wheel::Run'           => 1.2179,
         'POE::Filter::Reference'    => 1.2187,

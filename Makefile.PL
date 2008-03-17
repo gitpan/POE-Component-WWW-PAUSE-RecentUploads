@@ -8,7 +8,7 @@ WriteMakefile
           'EXE_FILES' => [],
           'VERSION_FROM' => 'lib/POE/Component/WWW/PAUSE/RecentUploads.pm',
           'PREREQ_PM' => {
-                           'WWW::PAUSE::RecentUploads' => '0.01',
+                           'WWW::PAUSE::RecentUploads' => '0.03',
                            'Test::More' => 0,
                            'POE::Wheel::Run' => '1.2179',
                            'POE::Filter::Reference' => '1.2187',
